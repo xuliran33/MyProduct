@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2E993F9428C835A500C09DAB /* LocalNotificationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E993F9328C835A500C09DAB /* LocalNotificationManager.m */; };
+		2E993F9828C83EAB00C09DAB /* CommonTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E993F9728C83EAB00C09DAB /* CommonTools.m */; };
 		2EB3F9EB28C5F9D100026ACE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EB3F9EA28C5F9D100026ACE /* AppDelegate.m */; };
 		2EB3F9F128C5F9D100026ACE /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EB3F9F028C5F9D100026ACE /* ViewController.m */; };
 		2EB3F9F428C5F9D100026ACE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2EB3F9F228C5F9D100026ACE /* Main.storyboard */; };
@@ -36,6 +38,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2E993F9228C835A500C09DAB /* LocalNotificationManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LocalNotificationManager.h; sourceTree = "<group>"; };
+		2E993F9328C835A500C09DAB /* LocalNotificationManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LocalNotificationManager.m; sourceTree = "<group>"; };
+		2E993F9628C83EAB00C09DAB /* CommonTools.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommonTools.h; sourceTree = "<group>"; };
+		2E993F9728C83EAB00C09DAB /* CommonTools.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CommonTools.m; sourceTree = "<group>"; };
 		2EB3F9E628C5F9D100026ACE /* MyProduct.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyProduct.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2EB3F9E928C5F9D100026ACE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		2EB3F9EA28C5F9D100026ACE /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -78,6 +84,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2E993F9128C8357900C09DAB /* LocalNotification */ = {
+			isa = PBXGroup;
+			children = (
+				2E993F9228C835A500C09DAB /* LocalNotificationManager.h */,
+				2E993F9328C835A500C09DAB /* LocalNotificationManager.m */,
+			);
+			path = LocalNotification;
+			sourceTree = "<group>";
+		};
+		2E993F9528C83E9100C09DAB /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				2E993F9628C83EAB00C09DAB /* CommonTools.h */,
+				2E993F9728C83EAB00C09DAB /* CommonTools.m */,
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
 		2EB3F9DD28C5F9D100026ACE = {
 			isa = PBXGroup;
 			children = (
@@ -101,6 +125,8 @@
 		2EB3F9E828C5F9D100026ACE /* MyProduct */ = {
 			isa = PBXGroup;
 			children = (
+				2E993F9528C83E9100C09DAB /* Tools */,
+				2E993F9128C8357900C09DAB /* LocalNotification */,
 				2EB3F9E928C5F9D100026ACE /* AppDelegate.h */,
 				2EB3F9EA28C5F9D100026ACE /* AppDelegate.m */,
 				2EB3F9EF28C5F9D100026ACE /* ViewController.h */,
@@ -263,7 +289,9 @@
 			files = (
 				2EB3F9F128C5F9D100026ACE /* ViewController.m in Sources */,
 				2EB3F9EB28C5F9D100026ACE /* AppDelegate.m in Sources */,
+				2E993F9428C835A500C09DAB /* LocalNotificationManager.m in Sources */,
 				2EB3F9FC28C5F9D300026ACE /* main.m in Sources */,
+				2E993F9828C83EAB00C09DAB /* CommonTools.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -442,7 +470,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MyProduct/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = Main;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -470,7 +498,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MyProduct/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = Main;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";

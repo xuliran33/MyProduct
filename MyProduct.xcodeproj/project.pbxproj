@@ -13,6 +13,7 @@
 		2E9B00D128C9BF36005315AF /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E9B00D028C9BF36005315AF /* BaseViewController.m */; };
 		2E9B00D528C9C264005315AF /* NavigationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E9B00D428C9C264005315AF /* NavigationView.m */; };
 		2E9B00D728C9C27A005315AF /* NavigationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E9B00D628C9C27A005315AF /* NavigationView.xib */; };
+		2E9B00DD28C9CF49005315AF /* TabbarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E9B00DC28C9CF49005315AF /* TabbarViewController.m */; };
 		2EB3F9EB28C5F9D100026ACE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EB3F9EA28C5F9D100026ACE /* AppDelegate.m */; };
 		2EB3F9F128C5F9D100026ACE /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EB3F9F028C5F9D100026ACE /* ViewController.m */; };
 		2EB3F9F428C5F9D100026ACE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2EB3F9F228C5F9D100026ACE /* Main.storyboard */; };
@@ -55,6 +56,8 @@
 		2E9B00D428C9C264005315AF /* NavigationView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NavigationView.m; sourceTree = "<group>"; };
 		2E9B00D628C9C27A005315AF /* NavigationView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NavigationView.xib; sourceTree = "<group>"; };
 		2E9B00D928C9C412005315AF /* Common.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Common.h; sourceTree = "<group>"; };
+		2E9B00DB28C9CF49005315AF /* TabbarViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TabbarViewController.h; sourceTree = "<group>"; };
+		2E9B00DC28C9CF49005315AF /* TabbarViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TabbarViewController.m; sourceTree = "<group>"; };
 		2EB3F9E628C5F9D100026ACE /* MyProduct.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyProduct.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2EB3F9E928C5F9D100026ACE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		2EB3F9EA28C5F9D100026ACE /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -153,6 +156,15 @@
 			path = Common;
 			sourceTree = "<group>";
 		};
+		2E9B00DA28C9CEF9005315AF /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				2E9B00DB28C9CF49005315AF /* TabbarViewController.h */,
+				2E9B00DC28C9CF49005315AF /* TabbarViewController.m */,
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
 		2EB3F9DD28C5F9D100026ACE = {
 			isa = PBXGroup;
 			children = (
@@ -178,6 +190,7 @@
 		2EB3F9E828C5F9D100026ACE /* MyProduct */ = {
 			isa = PBXGroup;
 			children = (
+				2E9B00DA28C9CEF9005315AF /* TabBar */,
 				2E9B00D828C9C3FD005315AF /* Common */,
 				2E9B00D228C9C220005315AF /* Navigation */,
 				2E9B00CE28C9BF1A005315AF /* Base */,
@@ -479,6 +492,7 @@
 				2E9B00D528C9C264005315AF /* NavigationView.m in Sources */,
 				2E9B00D128C9BF36005315AF /* BaseViewController.m in Sources */,
 				2EB3F9EB28C5F9D100026ACE /* AppDelegate.m in Sources */,
+				2E9B00DD28C9CF49005315AF /* TabbarViewController.m in Sources */,
 				2E993F9428C835A500C09DAB /* LocalNotificationManager.m in Sources */,
 				2EB3F9FC28C5F9D300026ACE /* main.m in Sources */,
 				2E993F9828C83EAB00C09DAB /* CommonTools.m in Sources */,

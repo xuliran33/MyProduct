@@ -15,7 +15,9 @@
 
 // 屏宽系数(分为横屏及竖屏)
 #define kScreenScale (([UIScreen mainScreen].bounds.size.width < [UIScreen mainScreen].bounds.size.height ? [UIScreen mainScreen].bounds.size.width : [UIScreen mainScreen].bounds.size.height)/375)
+
 #define ADAPT(A) A*kScreenScale
+#define ADAPTNEW(A) (A*(DLScreenWidth/375))
 
 #define kStatsuBarHeight [[UIApplication sharedApplication] statusBarFrame].size.height
 

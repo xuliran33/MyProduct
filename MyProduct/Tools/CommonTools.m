@@ -6,7 +6,7 @@
 //
 
 #import "CommonTools.h"
-#import <UIKit/UIKit.h>
+
 
 @implementation CommonTools
 

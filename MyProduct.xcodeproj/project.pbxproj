@@ -10,6 +10,9 @@
 		0BE852CBE30F838A192A8D10 /* Pods_MyProduct.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E653646C53885ABB740175C7 /* Pods_MyProduct.framework */; };
 		2E993F9428C835A500C09DAB /* LocalNotificationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E993F9328C835A500C09DAB /* LocalNotificationManager.m */; };
 		2E993F9828C83EAB00C09DAB /* CommonTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E993F9728C83EAB00C09DAB /* CommonTools.m */; };
+		2E9B00D128C9BF36005315AF /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E9B00D028C9BF36005315AF /* BaseViewController.m */; };
+		2E9B00D528C9C264005315AF /* NavigationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E9B00D428C9C264005315AF /* NavigationView.m */; };
+		2E9B00D728C9C27A005315AF /* NavigationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E9B00D628C9C27A005315AF /* NavigationView.xib */; };
 		2EB3F9EB28C5F9D100026ACE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EB3F9EA28C5F9D100026ACE /* AppDelegate.m */; };
 		2EB3F9F128C5F9D100026ACE /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EB3F9F028C5F9D100026ACE /* ViewController.m */; };
 		2EB3F9F428C5F9D100026ACE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2EB3F9F228C5F9D100026ACE /* Main.storyboard */; };
@@ -46,6 +49,12 @@
 		2E993F9328C835A500C09DAB /* LocalNotificationManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LocalNotificationManager.m; sourceTree = "<group>"; };
 		2E993F9628C83EAB00C09DAB /* CommonTools.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommonTools.h; sourceTree = "<group>"; };
 		2E993F9728C83EAB00C09DAB /* CommonTools.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CommonTools.m; sourceTree = "<group>"; };
+		2E9B00CF28C9BF36005315AF /* BaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
+		2E9B00D028C9BF36005315AF /* BaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
+		2E9B00D328C9C264005315AF /* NavigationView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NavigationView.h; sourceTree = "<group>"; };
+		2E9B00D428C9C264005315AF /* NavigationView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NavigationView.m; sourceTree = "<group>"; };
+		2E9B00D628C9C27A005315AF /* NavigationView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NavigationView.xib; sourceTree = "<group>"; };
+		2E9B00D928C9C412005315AF /* Common.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Common.h; sourceTree = "<group>"; };
 		2EB3F9E628C5F9D100026ACE /* MyProduct.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyProduct.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2EB3F9E928C5F9D100026ACE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		2EB3F9EA28C5F9D100026ACE /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -117,6 +126,33 @@
 			path = Tools;
 			sourceTree = "<group>";
 		};
+		2E9B00CE28C9BF1A005315AF /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				2E9B00CF28C9BF36005315AF /* BaseViewController.h */,
+				2E9B00D028C9BF36005315AF /* BaseViewController.m */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		2E9B00D228C9C220005315AF /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				2E9B00D328C9C264005315AF /* NavigationView.h */,
+				2E9B00D428C9C264005315AF /* NavigationView.m */,
+				2E9B00D628C9C27A005315AF /* NavigationView.xib */,
+			);
+			path = Navigation;
+			sourceTree = "<group>";
+		};
+		2E9B00D828C9C3FD005315AF /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				2E9B00D928C9C412005315AF /* Common.h */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
 		2EB3F9DD28C5F9D100026ACE = {
 			isa = PBXGroup;
 			children = (
@@ -142,6 +178,9 @@
 		2EB3F9E828C5F9D100026ACE /* MyProduct */ = {
 			isa = PBXGroup;
 			children = (
+				2E9B00D828C9C3FD005315AF /* Common */,
+				2E9B00D228C9C220005315AF /* Navigation */,
+				2E9B00CE28C9BF1A005315AF /* Base */,
 				2E993F9528C83E9100C09DAB /* Tools */,
 				2E993F9128C8357900C09DAB /* LocalNotification */,
 				2EB3F9E928C5F9D100026ACE /* AppDelegate.h */,
@@ -194,7 +233,6 @@
 				5D84E161F0E134CB208FD4A2 /* Pods-MyProductTests.debug.xcconfig */,
 				B9C2B3B86A378C46C91576A5 /* Pods-MyProductTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -308,6 +346,7 @@
 			files = (
 				2EB3F9F928C5F9D300026ACE /* LaunchScreen.storyboard in Resources */,
 				2EB3F9F628C5F9D300026ACE /* Assets.xcassets in Resources */,
+				2E9B00D728C9C27A005315AF /* NavigationView.xib in Resources */,
 				2EB3F9F428C5F9D100026ACE /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -437,6 +476,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				2EB3F9F128C5F9D100026ACE /* ViewController.m in Sources */,
+				2E9B00D528C9C264005315AF /* NavigationView.m in Sources */,
+				2E9B00D128C9BF36005315AF /* BaseViewController.m in Sources */,
 				2EB3F9EB28C5F9D100026ACE /* AppDelegate.m in Sources */,
 				2E993F9428C835A500C09DAB /* LocalNotificationManager.m in Sources */,
 				2EB3F9FC28C5F9D300026ACE /* main.m in Sources */,

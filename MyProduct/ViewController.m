@@ -8,6 +8,8 @@
 #import "ViewController.h"
 #import "LocalNotificationManager.h"
 
+
+
 @interface ViewController ()
 
 @end
@@ -25,9 +27,17 @@
 
 // 添加本地通知点击事件
 - (IBAction)addLocalNotification:(UIButton *)sender {
-    [LocalNotificationManager sendNotification];
+//    [LocalNotificationManager sendNotification];
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    ViewController *vc = [storyboard instantiateViewControllerWithIdentifier:@"ViewController"];
+    
+    [self.navigationController pushViewController:vc animated:YES];
+    
+    
     
 }
+
+
 
 
 

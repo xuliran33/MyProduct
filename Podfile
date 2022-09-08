@@ -9,6 +9,7 @@ pod 'AFNetworking'
 pod 'SDWebImage'
 pod 'MBProgressHUD'
 pod 'MJRefresh'
+pod 'Masonry'
   # Pods for MyProduct
 
   target 'MyProductTests' do

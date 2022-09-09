@@ -7,6 +7,7 @@
 
 #import "AppDelegate.h"
 #import <USerNotifications/USerNotifications.h>
+#import "LaunchViewController.h"
 
 @interface AppDelegate ()<UNUserNotificationCenterDelegate, UIApplicationDelegate>
 
@@ -16,13 +17,25 @@
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    
+    [self setStartRootViewController];
     [self registerLocalAPN];
     
     if (launchOptions[UIApplicationLaunchOptionsLocalNotificationKey]) {
         [self didDealLocalNotificationWithUserInfo:launchOptions[UIApplicationLaunchOptionsLocalNotificationKey]];
     }
     return YES;
+}
+
+// 程序启动时把LaunchViewController设置为rootViewController
+- (void)setStartRootViewController {
+    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    self.window.backgroundColor = [UIColor whiteColor];
+        
+    // 设置相应的 ViewController
+    LaunchViewController *vc = [[LaunchViewController alloc] init];
+    self.window.rootViewController = vc;
+
+    [self.window makeKeyAndVisible];
 }
 
 #pragma mark ---------------通知相关-------

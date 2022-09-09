@@ -10,6 +10,7 @@ pod 'SDWebImage'
 pod 'MBProgressHUD'
 pod 'MJRefresh'
 pod 'Masonry'
+pod 'JXCategoryView'
   # Pods for MyProduct
 
   target 'MyProductTests' do

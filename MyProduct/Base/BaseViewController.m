@@ -7,7 +7,7 @@
 
 #import "BaseViewController.h"
 #import "NavigationView.h"
-#import "Common.h"
+
 
 @interface BaseViewController ()
 
@@ -15,8 +15,8 @@
 
 @implementation BaseViewController
 
-- (void)awakeFromNib {
-    [super awakeFromNib];
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
     
     // 隐藏默认导航栏
     self.navigationController.navigationBarHidden = NO;

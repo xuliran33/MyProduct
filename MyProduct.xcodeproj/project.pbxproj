@@ -24,6 +24,9 @@
 		2EB3FA1028C5F9D300026ACE /* MyProductUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EB3FA0F28C5F9D300026ACE /* MyProductUITests.m */; };
 		2EB3FA1228C5F9D300026ACE /* MyProductUITestsLaunchTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EB3FA1128C5F9D300026ACE /* MyProductUITestsLaunchTests.m */; };
 		BB4027539D5054D4BC319620 /* Pods_MyProductTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6AB4C1559C3F1C79249B88AE /* Pods_MyProductTests.framework */; };
+		F4692F1A28CAD54600FFE527 /* NetworkTools.m in Sources */ = {isa = PBXBuildFile; fileRef = F4692F1928CAD54600FFE527 /* NetworkTools.m */; };
+		F4692F2028CB1D1900FFE527 /* HomeView.m in Sources */ = {isa = PBXBuildFile; fileRef = F4692F1F28CB1D1900FFE527 /* HomeView.m */; };
+		F4692F2728CB23F000FFE527 /* LaunchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F4692F2628CB23F000FFE527 /* LaunchViewController.m */; };
 		FDA803EC114F2D19D74D6DC2 /* Pods_MyProduct_MyProductUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56F67DE5C89BC6EFA8F0D5AA /* Pods_MyProduct_MyProductUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -80,6 +83,13 @@
 		AB274F73C803D8EAAC286310 /* Pods-MyProduct.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyProduct.release.xcconfig"; path = "Target Support Files/Pods-MyProduct/Pods-MyProduct.release.xcconfig"; sourceTree = "<group>"; };
 		B9C2B3B86A378C46C91576A5 /* Pods-MyProductTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyProductTests.release.xcconfig"; path = "Target Support Files/Pods-MyProductTests/Pods-MyProductTests.release.xcconfig"; sourceTree = "<group>"; };
 		E653646C53885ABB740175C7 /* Pods_MyProduct.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyProduct.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F4692F1728CAD54600FFE527 /* Urls.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Urls.h; sourceTree = "<group>"; };
+		F4692F1828CAD54600FFE527 /* NetworkTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkTools.h; sourceTree = "<group>"; };
+		F4692F1928CAD54600FFE527 /* NetworkTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkTools.m; sourceTree = "<group>"; };
+		F4692F1E28CB1D1900FFE527 /* HomeView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeView.h; sourceTree = "<group>"; };
+		F4692F1F28CB1D1900FFE527 /* HomeView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeView.m; sourceTree = "<group>"; };
+		F4692F2528CB23F000FFE527 /* LaunchViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LaunchViewController.h; sourceTree = "<group>"; };
+		F4692F2628CB23F000FFE527 /* LaunchViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LaunchViewController.m; sourceTree = "<group>"; };
 		FEE53F1028D7D6B8A6493B8F /* Pods-MyProduct-MyProductUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyProduct-MyProductUITests.debug.xcconfig"; path = "Target Support Files/Pods-MyProduct-MyProductUITests/Pods-MyProduct-MyProductUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -123,6 +133,7 @@
 		2E993F9528C83E9100C09DAB /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				F4692F1628CAD53900FFE527 /* Network */,
 				2E993F9628C83EAB00C09DAB /* CommonTools.h */,
 				2E993F9728C83EAB00C09DAB /* CommonTools.m */,
 			);
@@ -190,6 +201,8 @@
 		2EB3F9E828C5F9D100026ACE /* MyProduct */ = {
 			isa = PBXGroup;
 			children = (
+				F4692F2128CB23AD00FFE527 /* Launch */,
+				F4692F1D28CB1D0400FFE527 /* Home */,
 				2E9B00DA28C9CEF9005315AF /* TabBar */,
 				2E9B00D828C9C3FD005315AF /* Common */,
 				2E9B00D228C9C220005315AF /* Navigation */,
@@ -247,6 +260,34 @@
 				B9C2B3B86A378C46C91576A5 /* Pods-MyProductTests.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		F4692F1628CAD53900FFE527 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				F4692F1828CAD54600FFE527 /* NetworkTools.h */,
+				F4692F1928CAD54600FFE527 /* NetworkTools.m */,
+				F4692F1728CAD54600FFE527 /* Urls.h */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		F4692F1D28CB1D0400FFE527 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				F4692F1E28CB1D1900FFE527 /* HomeView.h */,
+				F4692F1F28CB1D1900FFE527 /* HomeView.m */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		F4692F2128CB23AD00FFE527 /* Launch */ = {
+			isa = PBXGroup;
+			children = (
+				F4692F2528CB23F000FFE527 /* LaunchViewController.h */,
+				F4692F2628CB23F000FFE527 /* LaunchViewController.m */,
+			);
+			path = Launch;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -491,11 +532,14 @@
 				2EB3F9F128C5F9D100026ACE /* ViewController.m in Sources */,
 				2E9B00D528C9C264005315AF /* NavigationView.m in Sources */,
 				2E9B00D128C9BF36005315AF /* BaseViewController.m in Sources */,
+				F4692F1A28CAD54600FFE527 /* NetworkTools.m in Sources */,
 				2EB3F9EB28C5F9D100026ACE /* AppDelegate.m in Sources */,
 				2E9B00DD28C9CF49005315AF /* TabbarViewController.m in Sources */,
 				2E993F9428C835A500C09DAB /* LocalNotificationManager.m in Sources */,
+				F4692F2028CB1D1900FFE527 /* HomeView.m in Sources */,
 				2EB3F9FC28C5F9D300026ACE /* main.m in Sources */,
 				2E993F9828C83EAB00C09DAB /* CommonTools.m in Sources */,
+				F4692F2728CB23F000FFE527 /* LaunchViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

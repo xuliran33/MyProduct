@@ -9,6 +9,7 @@
 #import "LocalNotificationManager.h"
 #import <JXCategoryView/JXCategoryView.h>
 #import "HomeView.h"
+#import "FirstViewController.h"
 
 
 
@@ -30,8 +31,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.tabListArray = @[@"我的电脑"];
-    
+    self.tabListArray = @[@"页面1", @"页面2"];
+        
     [self setUI];
 }
 
@@ -67,27 +68,23 @@
 }
 
 - (id<JXCategoryListContentViewDelegate>)listContainerView:(JXCategoryListContainerView *)listContainerView initListForIndex:(NSInteger)index {
-
-    return [[HomeView alloc] initWithFrame:CGRectMake(0, kStatsuBarHeight + 50, ScreenWidth, ScreenHeight - kStatsuBarHeight - 50)];
+    if (index == 0) {
+        FirstViewController *vc = [[FirstViewController alloc] initWithNibName:@"FirstViewController" bundle:nil];
+        return vc;
+    }else {
+        return [[HomeView alloc] initWithFrame:CGRectMake(0, kStatsuBarHeight + 50, ScreenWidth, ScreenHeight - kStatsuBarHeight - 50)];
+    }
+    
 }
 
 // 重写设置导航栏的方法，隐藏导航栏
 - (void)setNavi{}
 
-
-
-
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }
 
-//// 添加本地通知点击事件
-//- (IBAction)addLocalNotification:(UIButton *)sender {
-////    [LocalNotificationManager sendNotification];
-//    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-//    ViewController *vc = [storyboard instantiateViewControllerWithIdentifier:@"ViewController"];
-//    [self.navigationController pushViewController:vc animated:YES];
-//}
+
 
 
 

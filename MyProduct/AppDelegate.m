@@ -8,6 +8,7 @@
 #import "AppDelegate.h"
 #import <USerNotifications/USerNotifications.h>
 #import "LaunchViewController.h"
+#import "VideoFullScreenController.h"
 
 @interface AppDelegate ()<UNUserNotificationCenterDelegate, UIApplicationDelegate>
 
@@ -33,6 +34,7 @@
         
     // 设置相应的 ViewController
     LaunchViewController *vc = [[LaunchViewController alloc] init];
+//    VideoFullScreenController *vc= [[VideoFullScreenController alloc] init];
     self.window.rootViewController = vc;
 
     [self.window makeKeyAndVisible];
@@ -40,7 +42,7 @@
 
 #pragma mark ---------------通知相关-------
 
-// iOS之前程序在后台，或前台接收到本地通知时调用，iOS8-10，如果应用在前台，则本地通知不会呈现出来
+// iOS之前程序在后台，或前台接收到本地通知时调用，iOS8-10，如果应用在前台，则本地通知不会呈现出来， iOS10以后本地通知会在状态栏弹出
 - (void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification {
     [self didDealLocalNotificationWithUserInfo:notification.userInfo];
 }

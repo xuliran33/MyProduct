@@ -25,10 +25,8 @@
 
 }
 
-
 // 判断首页，已登录显示首页，未登录显示登录页
 - (void)configRootViewController {
-    
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     ViewController *vc = [storyboard instantiateViewControllerWithIdentifier:@"ViewController"];
     [UIApplication sharedApplication].delegate.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:vc];

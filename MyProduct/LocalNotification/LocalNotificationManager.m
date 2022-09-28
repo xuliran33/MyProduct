@@ -14,6 +14,8 @@
 
 @implementation LocalNotificationManager
 
+// 
+
 + (void)sendNotification {
     [self checkUserNotificationEnable];
 }

@@ -7,6 +7,7 @@
 
 #import <UIKit/UIKit.h>
 #import "Common.h"
+#import "NavigationView.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -15,6 +16,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 // 设置导航栏
 - (void)setNavi;
+
+@property (nonatomic, strong) NavigationView *naviView;
 
 @end
 

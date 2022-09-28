@@ -19,4 +19,11 @@
     return self;
 }
 
+
+- (IBAction)backAction:(id)sender {
+    if (self.buttonBlock) {
+        self.buttonBlock();
+    }
+}
+
 @end

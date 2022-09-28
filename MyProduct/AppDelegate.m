@@ -113,6 +113,16 @@
     completionHandler();
 }
 
+// 支持的屏幕方向
+- (UIInterfaceOrientationMask)application:(UIApplication *)application supportedInterfaceOrientationsForWindow:(UIWindow *)window {
+    if (self.suportOrientations) {
+        return  UIInterfaceOrientationMaskLandscapeRight | UIInterfaceOrientationMaskLandscapeLeft;
+    }else {
+        return  UIInterfaceOrientationMaskPortrait;
+    }
+}
+
+
 
 
 @end

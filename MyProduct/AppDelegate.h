@@ -11,5 +11,8 @@
 
 @property (nonatomic, strong) UIWindow *window;
 
+// 判断是否支持屏幕旋转
+@property (assign, nonatomic) BOOL suportOrientations;
+
 @end
 

@@ -7,6 +7,7 @@
 
 #import "FirstViewController.h"
 #import "LocalNotificationManager.h"
+#import "VideoFullScreenController.h"
 
 
 @interface FirstViewController ()<UITableViewDelegate, UITableViewDataSource>
@@ -60,6 +61,8 @@
     }
     if (indexPath.row == 1) {
         // 屏幕旋转原理
+        VideoFullScreenController *vc = [[VideoFullScreenController alloc] init];
+        [self.navigationController pushViewController:vc animated:YES];
     }
     
 }

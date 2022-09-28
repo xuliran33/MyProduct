@@ -27,6 +27,7 @@
 		F4347B8828E2E23800BE1314 /* VideoFullScreenController.m in Sources */ = {isa = PBXBuildFile; fileRef = F4347B8728E2E23800BE1314 /* VideoFullScreenController.m */; };
 		F4347B8F28E425D400BE1314 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F4347B8D28E425D400BE1314 /* FirstViewController.m */; };
 		F4347B9028E425D400BE1314 /* FirstViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F4347B8E28E425D400BE1314 /* FirstViewController.xib */; };
+		F443716828E4378200D9E97A /* BaseNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = F443716728E4378200D9E97A /* BaseNavigationController.m */; };
 		F4692F1A28CAD54600FFE527 /* NetworkTools.m in Sources */ = {isa = PBXBuildFile; fileRef = F4692F1928CAD54600FFE527 /* NetworkTools.m */; };
 		F4692F2028CB1D1900FFE527 /* HomeView.m in Sources */ = {isa = PBXBuildFile; fileRef = F4692F1F28CB1D1900FFE527 /* HomeView.m */; };
 		F4692F2728CB23F000FFE527 /* LaunchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F4692F2628CB23F000FFE527 /* LaunchViewController.m */; };
@@ -92,6 +93,8 @@
 		F4347B8C28E425D400BE1314 /* FirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
 		F4347B8D28E425D400BE1314 /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
 		F4347B8E28E425D400BE1314 /* FirstViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FirstViewController.xib; sourceTree = "<group>"; };
+		F443716628E4378200D9E97A /* BaseNavigationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseNavigationController.h; sourceTree = "<group>"; };
+		F443716728E4378200D9E97A /* BaseNavigationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseNavigationController.m; sourceTree = "<group>"; };
 		F4692F1728CAD54600FFE527 /* Urls.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Urls.h; sourceTree = "<group>"; };
 		F4692F1828CAD54600FFE527 /* NetworkTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkTools.h; sourceTree = "<group>"; };
 		F4692F1928CAD54600FFE527 /* NetworkTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkTools.m; sourceTree = "<group>"; };
@@ -158,6 +161,8 @@
 			children = (
 				2E9B00CF28C9BF36005315AF /* BaseViewController.h */,
 				2E9B00D028C9BF36005315AF /* BaseViewController.m */,
+				F443716628E4378200D9E97A /* BaseNavigationController.h */,
+				F443716728E4378200D9E97A /* BaseNavigationController.m */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -562,6 +567,7 @@
 				2EB3F9FC28C5F9D300026ACE /* main.m in Sources */,
 				2E993F9828C83EAB00C09DAB /* CommonTools.m in Sources */,
 				F4692F2728CB23F000FFE527 /* LaunchViewController.m in Sources */,
+				F443716828E4378200D9E97A /* BaseNavigationController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

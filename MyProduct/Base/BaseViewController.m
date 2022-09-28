@@ -6,7 +6,7 @@
 //
 
 #import "BaseViewController.h"
-#import "NavigationView.h"
+
 
 
 @interface BaseViewController ()
@@ -37,9 +37,13 @@
 }
 
 - (void)setNavi {
-    NavigationView *view = [[NavigationView alloc] initWithFrame:CGRectMake(0, 0, ScreenWidth, kStatsuBarHeight + 44)];
-    
-    [self.view addSubview:view];
+    self.naviView = [[NavigationView alloc] initWithFrame:CGRectMake(0, 0, ScreenWidth, kStatsuBarHeight + 44)];
+    kWeakSelf(self)
+    [self.naviView setButtonBlock:^{
+        kStrongSelf(self);
+        [self backAction];
+    }];
+    [self.view addSubview:self.naviView];
 }
 
 @end

@@ -6,10 +6,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Common.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface NavigationView : UIView
+
+
+@property (nonatomic, copy) simpleBlock buttonBlock;
 
 @end
 

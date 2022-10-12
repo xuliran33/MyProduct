@@ -25,6 +25,36 @@
 #define kWeakSelf(type)  __weak typeof(type) weak##type = type;
 #define kStrongSelf(type) __strong typeof(type) type = weak##type;
 
+// 单例
+#define singleton_interface(class) + (instancetype)shared##class;
+#define singleton_implementation(class)\
+static class *_instance;\
+\
++ (id)allocWithZone:(struct _NSZone *)zone \
+{\
+    static dispatch_once_t onceToken;\
+    dispatch_once(&onceToken, ^{\
+        _instance = [[super allocWithZone:NULL] init];\
+     });\
+\
+    return _instance;\
+}\
+\
++ (instancetype)shared##class \
+{\
+    if(_instance == nil){\
+        _instance = [[class alloc] init];\
+    }\
+\
+    return _instance;\
+}\
+\
+- (id)copyWithZone:(struct _NSZone *)zone\
+{\
+   return [class shared##class];\
+}
+
+
 // 没有参数没有返回值的block
 typedef void (^simpleBlock)(void);
 

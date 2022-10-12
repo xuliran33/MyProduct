@@ -27,6 +27,9 @@
 		F4347B8828E2E23800BE1314 /* VideoFullScreenController.m in Sources */ = {isa = PBXBuildFile; fileRef = F4347B8728E2E23800BE1314 /* VideoFullScreenController.m */; };
 		F4347B8F28E425D400BE1314 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F4347B8D28E425D400BE1314 /* FirstViewController.m */; };
 		F4347B9028E425D400BE1314 /* FirstViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F4347B8E28E425D400BE1314 /* FirstViewController.xib */; };
+		F439027228F664160008F38D /* BLEViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F439027028F664160008F38D /* BLEViewController.m */; };
+		F439027328F664160008F38D /* BLEViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F439027128F664160008F38D /* BLEViewController.xib */; };
+		F439027628F664C80008F38D /* BLEManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F439027528F664C80008F38D /* BLEManager.m */; };
 		F443716828E4378200D9E97A /* BaseNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = F443716728E4378200D9E97A /* BaseNavigationController.m */; };
 		F4692F1A28CAD54600FFE527 /* NetworkTools.m in Sources */ = {isa = PBXBuildFile; fileRef = F4692F1928CAD54600FFE527 /* NetworkTools.m */; };
 		F4692F2028CB1D1900FFE527 /* HomeView.m in Sources */ = {isa = PBXBuildFile; fileRef = F4692F1F28CB1D1900FFE527 /* HomeView.m */; };
@@ -93,6 +96,11 @@
 		F4347B8C28E425D400BE1314 /* FirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
 		F4347B8D28E425D400BE1314 /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
 		F4347B8E28E425D400BE1314 /* FirstViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FirstViewController.xib; sourceTree = "<group>"; };
+		F439026F28F664160008F38D /* BLEViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BLEViewController.h; sourceTree = "<group>"; };
+		F439027028F664160008F38D /* BLEViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BLEViewController.m; sourceTree = "<group>"; };
+		F439027128F664160008F38D /* BLEViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BLEViewController.xib; sourceTree = "<group>"; };
+		F439027428F664C80008F38D /* BLEManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BLEManager.h; sourceTree = "<group>"; };
+		F439027528F664C80008F38D /* BLEManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BLEManager.m; sourceTree = "<group>"; };
 		F443716628E4378200D9E97A /* BaseNavigationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseNavigationController.h; sourceTree = "<group>"; };
 		F443716728E4378200D9E97A /* BaseNavigationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseNavigationController.m; sourceTree = "<group>"; };
 		F4692F1728CAD54600FFE527 /* Urls.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Urls.h; sourceTree = "<group>"; };
@@ -219,6 +227,7 @@
 		2EB3F9E828C5F9D100026ACE /* MyProduct */ = {
 			isa = PBXGroup;
 			children = (
+				F439026E28F663FD0008F38D /* BLE */,
 				F4692F2128CB23AD00FFE527 /* Launch */,
 				F4692F1D28CB1D0400FFE527 /* Home */,
 				2E9B00DA28C9CEF9005315AF /* TabBar */,
@@ -278,6 +287,18 @@
 				B9C2B3B86A378C46C91576A5 /* Pods-MyProductTests.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		F439026E28F663FD0008F38D /* BLE */ = {
+			isa = PBXGroup;
+			children = (
+				F439026F28F664160008F38D /* BLEViewController.h */,
+				F439027028F664160008F38D /* BLEViewController.m */,
+				F439027128F664160008F38D /* BLEViewController.xib */,
+				F439027428F664C80008F38D /* BLEManager.h */,
+				F439027528F664C80008F38D /* BLEManager.m */,
+			);
+			path = BLE;
 			sourceTree = "<group>";
 		};
 		F4692F1628CAD53900FFE527 /* Network */ = {
@@ -425,6 +446,7 @@
 				F4347B9028E425D400BE1314 /* FirstViewController.xib in Resources */,
 				2EB3F9F628C5F9D300026ACE /* Assets.xcassets in Resources */,
 				2E9B00D728C9C27A005315AF /* NavigationView.xib in Resources */,
+				F439027328F664160008F38D /* BLEViewController.xib in Resources */,
 				2EB3F9F428C5F9D100026ACE /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -553,6 +575,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F439027228F664160008F38D /* BLEViewController.m in Sources */,
 				2EB3F9F128C5F9D100026ACE /* ViewController.m in Sources */,
 				F4812BB328D1816A009D15A4 /* UIView+MLExtension.m in Sources */,
 				2E9B00D528C9C264005315AF /* NavigationView.m in Sources */,
@@ -563,6 +586,7 @@
 				F4347B8828E2E23800BE1314 /* VideoFullScreenController.m in Sources */,
 				2E993F9428C835A500C09DAB /* LocalNotificationManager.m in Sources */,
 				F4347B8F28E425D400BE1314 /* FirstViewController.m in Sources */,
+				F439027628F664C80008F38D /* BLEManager.m in Sources */,
 				F4692F2028CB1D1900FFE527 /* HomeView.m in Sources */,
 				2EB3F9FC28C5F9D300026ACE /* main.m in Sources */,
 				2E993F9828C83EAB00C09DAB /* CommonTools.m in Sources */,
@@ -746,6 +770,8 @@
 				DEVELOPMENT_TEAM = U8T4Y7GT37;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MyProduct/Info.plist;
+				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "需要蓝牙权限";
+				INFOPLIST_KEY_NSBluetoothPeripheralUsageDescription = "需要蓝牙权限";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -775,6 +801,8 @@
 				DEVELOPMENT_TEAM = U8T4Y7GT37;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MyProduct/Info.plist;
+				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "需要蓝牙权限";
+				INFOPLIST_KEY_NSBluetoothPeripheralUsageDescription = "需要蓝牙权限";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;

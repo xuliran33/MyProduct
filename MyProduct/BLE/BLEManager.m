@@ -45,7 +45,7 @@ singleton_implementation(BLEManager)
     self.cbcManager = [[CBCentralManager alloc] initWithDelegate:self queue:dispatch_get_main_queue() options:options];
 }
 
-#pragma mark --------------------CBCentralManagerDelegate
+#pragma mark ----------CBCentralManagerDelegate
 // 返回蓝牙的状态
 - (void)centralManagerDidUpdateState:(CBCentralManager *)central {
     switch (central.state) {
@@ -203,7 +203,7 @@ singleton_implementation(BLEManager)
     
 }
 
-#pragma mark ---------------CBPeripheralManagerDelegate
+#pragma mark ------------CBPeripheralManagerDelegate
 - (void)peripheralManagerDidUpdateState:(CBPeripheralManager *)peripheral {
     switch (peripheral.state) {
         case CBPeripheralManagerStateUnknown:
@@ -238,6 +238,8 @@ singleton_implementation(BLEManager)
     }
     // 服务和特征添加成功，开始广播
     [self.peripheralManager startAdvertising:@{CBAdvertisementDataServiceUUIDsKey: service.UUID}];
+//    停止广播
+//    [self.peripheralManager stopAdvertising];
 }
 
 // 开始广播后回调
@@ -295,7 +297,6 @@ singleton_implementation(BLEManager)
 
 // 关闭蓝牙设备
 - (void)closeBlueTooth {
-    
     //停止扫描
     [self.cbcManager stopScan];
     if (self.curPeripheral) {

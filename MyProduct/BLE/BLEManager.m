@@ -9,9 +9,9 @@
 #import <CoreBluetooth/CoreBluetooth.h>
 // 作为中心设备时的代理CBCentralManagerDelegate
 // CBPeripheralDelegate 对数据进行读写的代理
-@interface BLEManager ()<CBCentralManagerDelegate, CBPeripheralDelegate>
+@interface BLEManager ()<CBCentralManagerDelegate, CBPeripheralDelegate, CBPeripheralManagerDelegate>
 
-// 蓝牙设备作为中心设备
+// 手机蓝牙作为中心设备
 @property (nonatomic, strong) CBCentralManager *cbcManager;
 // 当前连接的外设
 @property (nonatomic, strong) CBPeripheral *curPeripheral;
@@ -19,6 +19,9 @@
 @property (nonatomic, strong) CBCharacteristic *readCharacterstic;
 // 写数据的特征
 @property (nonatomic, strong) CBCharacteristic *writeCharacterstic;
+
+// 手机蓝牙作为外设端
+@property (nonatomic, strong) CBPeripheralManager *peripheralManager;
 
 @end
 
@@ -29,15 +32,19 @@ singleton_implementation(BLEManager)
 
 - (instancetype)init {
     if (self = [super init]) {
-        // 初始化选项，设置为YES时，如果用户关闭蓝牙，会弹出一个提示框
-        NSDictionary *options = @{CBCentralManagerOptionShowPowerAlertKey: @YES};
-        self.cbcManager = [[CBCentralManager alloc] initWithDelegate:self queue:dispatch_get_main_queue() options:options];
-    
+        [self createPeripheralManager];
+        
     }
     return self;
 }
 
 #pragma mark --------------------蓝牙作为中心设备
+- (void)createCenterManager {
+    // 初始化选项，设置为YES时，如果用户关闭蓝牙，会弹出一个提示框
+    NSDictionary *options = @{CBCentralManagerOptionShowPowerAlertKey: @YES};
+    self.cbcManager = [[CBCentralManager alloc] initWithDelegate:self queue:dispatch_get_main_queue() options:options];
+}
+
 #pragma mark --------------------CBCentralManagerDelegate
 // 返回蓝牙的状态
 - (void)centralManagerDidUpdateState:(CBCentralManager *)central {
@@ -50,7 +57,7 @@ singleton_implementation(BLEManager)
             // 模拟器不支持蓝牙调试
             NSLog(@"模拟器不支持蓝牙调试");
             break;
-        case CBManagerStateUnauthorized:
+        case CBCentralManagerStateUnauthorized:
             // 蓝牙未授权
             NSLog(@"蓝牙未授权");
             break;
@@ -58,15 +65,13 @@ singleton_implementation(BLEManager)
             // 蓝牙处于重置状态
             NSLog(@"蓝牙处于重置状态");
             break;
-        case CBManagerStatePoweredOn:
+        case CBCentralManagerStatePoweredOn:
             // 蓝牙已开启
             NSLog(@"蓝牙已开启");
             // 可以根据UUID来扫描外设，如果不设置，就扫描所有蓝牙设备
             [self.cbcManager scanForPeripheralsWithServices:nil options:nil];
             // 根据UUID来扫描外设
-//            [self.cbcManager scanForPeripheralsWithServices:@[[CBUUID UUIDWithString:@""]] options:nil];
-
-          
+            //            [self.cbcManager scanForPeripheralsWithServices:@[[CBUUID UUIDWithString:@""]] options:nil];
             break;
         default:
             break;
@@ -78,7 +83,7 @@ singleton_implementation(BLEManager)
     NSString *name = peripheral.name;
     NSLog(@"==============%@", name);
     // 扫描到设备后，根据名字进行连接
-//    [self.cbcManager connectPeripheral:peripheral options:nil];
+    //    [self.cbcManager connectPeripheral:peripheral options:nil];
 }
 
 - (void)centralManager:(CBCentralManager *)central didFailToConnectPeripheral:(CBPeripheral *)peripheral error:(NSError *)error {
@@ -128,7 +133,7 @@ singleton_implementation(BLEManager)
     // 0xFFF3 UUID 和蓝牙开发人员进行约定
     for (CBCharacteristic *cbCharacteristic in service.characteristics) {
         if ([cbCharacteristic.UUID isEqual:[CBUUID UUIDWithString:@"0xFFF3"]]) {
-         // 记录读数据的特征
+            // 记录读数据的特征
             self.readCharacterstic = cbCharacteristic;
             // 订阅读数据的特征通知
             [self.curPeripheral setNotifyValue:YES forCharacteristic:self.readCharacterstic];
@@ -151,13 +156,13 @@ singleton_implementation(BLEManager)
 - (void)peripheral:(CBPeripheral *)peripheral didUpdateNotificationStateForCharacteristic:(CBCharacteristic *)characteristic error:(NSError *)error {
     // 当订阅状态发生变化的通知
     if (error) {
-            NSLog(@"订阅失败");
-        }
-        if (characteristic.isNotifying) {
-            NSLog(@"订阅成功");
-        } else {
-            NSLog(@"取消订阅");
-        }
+        NSLog(@"订阅失败");
+    }
+    if (characteristic.isNotifying) {
+        NSLog(@"订阅成功");
+    } else {
+        NSLog(@"取消订阅");
+    }
 }
 
 - (void)peripheral:(CBPeripheral *)peripheral didUpdateValueForCharacteristic:(CBCharacteristic *)characteristic error:(NSError *)error {
@@ -175,10 +180,10 @@ singleton_implementation(BLEManager)
 // 写数据
 - (void)writeData {
     NSString *string = @"指令";
-       // 用NSData类型来写入
-       NSData *data = [string dataUsingEncoding:NSUTF8StringEncoding];
-       // 根据之前记录的写数据特征self.writeCharacteristic来写入数据
-       [self.curPeripheral writeValue:data forCharacteristic:self.writeCharacterstic type:CBCharacteristicWriteWithResponse];
+    // 用NSData类型来写入
+    NSData *data = [string dataUsingEncoding:NSUTF8StringEncoding];
+    // 根据之前记录的写数据特征self.writeCharacteristic来写入数据
+    [self.curPeripheral writeValue:data forCharacteristic:self.writeCharacterstic type:CBCharacteristicWriteWithResponse];
 }
 
 // 写数据的回调
@@ -192,8 +197,105 @@ singleton_implementation(BLEManager)
 
 #pragma mark --------------------蓝牙作为外围设备
 
+// 创建peripheralManager对象
+- (void)createPeripheralManager {
+    self.peripheralManager = [[CBPeripheralManager alloc] initWithDelegate:self queue:nil options:nil];
+    
+}
+
+#pragma mark ---------------CBPeripheralManagerDelegate
+- (void)peripheralManagerDidUpdateState:(CBPeripheralManager *)peripheral {
+    switch (peripheral.state) {
+        case CBPeripheralManagerStateUnknown:
+            // 蓝牙状态未知
+            NSLog(@"蓝牙状态未知");
+            break;
+        case CBPeripheralManagerStateUnsupported:
+            // 模拟器不支持蓝牙调试
+            NSLog(@"模拟器不支持蓝牙调试");
+            break;
+        case CBPeripheralManagerStateUnauthorized:
+            // 蓝牙未授权
+            NSLog(@"蓝牙未授权");
+            break;
+        case CBPeripheralManagerStateResetting:
+            // 蓝牙处于重置状态
+            NSLog(@"蓝牙处于重置状态");
+            break;
+        case CBPeripheralManagerStatePoweredOn:
+            // 蓝牙已开启
+            [self configServiceAndCharacteristicForPeropheral];
+            break;
+        default:
+            break;
+    }
+}
+
+// 给蓝牙添加服务和特征后调用
+- (void)peripheralManager:(CBPeripheralManager *)peripheral didAddService:(CBService *)service error:(NSError *)error {
+    if (error) {
+        return;
+    }
+    // 服务和特征添加成功，开始广播
+    [self.peripheralManager startAdvertising:@{CBAdvertisementDataServiceUUIDsKey: service.UUID}];
+}
+
+// 开始广播后回调
+- (void)peripheralManagerDidStartAdvertising:(CBPeripheralManager *)peripheral error:(NSError *)error{
+    
+}
+
+// 当中央端脸上此设备并订阅了特征时回调
+- (void)peripheralManager:(CBPeripheralManager *)peripheral central:(CBCentral *)central didSubscribeToCharacteristic:(CBCharacteristic *)characteristic {
+    // 向中央端写数据
+    // 如果数据过多的话，可以转正Data，然后分段发送，如发送结束之后可以穿制定标识符，表示数据发送结束，如“EOM”
+    // 也可以想socket一样，传index，totaolCount，根据此来计算
+    //    [self.peripheralManager updateValue:[NSData data] forCharacteristic:characteristic onSubscribedCentrals:nil];
+}
+
+- (void)peripheralManagerIsReadyToUpdateSubscribers:(CBPeripheralManager *)peripheral {
+    // 此回调在CBPeripheralManager准备发送下一段数据时发送，这里一般用来实现保证分段数据按顺序发送给中央设备。
+}
+
+// 当收到中央端读数据的请求会调用
+- (void)peripheralManager:(CBPeripheralManager *)peripheral didReceiveReadRequest:(CBATTRequest *)request {
+    if (request.characteristic.properties & CBCharacteristicPropertyRead) {
+        NSData *data = request.characteristic.value;
+        [request setValue:data];
+        [self.peripheralManager respondToRequest:request withResult:CBATTErrorSuccess];
+    } else {
+        [self.peripheralManager respondToRequest:request withResult:CBATTErrorReadNotPermitted];
+    }
+}
+
+// 当收到中央端写数据的请求会调用
+- (void)peripheralManager:(CBPeripheralManager *)peripheral didReceiveWriteRequests:(NSArray<CBATTRequest *> *)requests {
+    for (CBATTRequest *request in requests) {
+        if (request.characteristic.properties & CBCharacteristicPropertyWrite) {
+            CBMutableCharacteristic *c = (CBMutableCharacteristic *)request.characteristic;
+            c.value = request.value;
+            [self.peripheralManager respondToRequest:request withResult:CBATTErrorSuccess];
+        } else {
+            [self.peripheralManager respondToRequest:request withResult:CBATTErrorWriteNotPermitted];
+        }
+    }
+}
+
+// 给手机蓝牙配置服务和特征
+- (void)configServiceAndCharacteristicForPeropheral {
+    CBMutableCharacteristic *charateristic = [[CBMutableCharacteristic alloc] initWithType:[CBUUID UUIDWithString:@""] properties:CBCharacteristicPropertyWrite | CBCharacteristicPropertyRead value:nil permissions:CBAttributePermissionsReadEncryptionRequired | CBAttributePermissionsWriteEncryptionRequired];
+    
+    CBMutableService *service = [[CBMutableService alloc] initWithType:[CBUUID UUIDWithString:@""] primary:YES];
+    [service setCharacteristics:@[charateristic]];
+    [self.peripheralManager addService:service];
+//    蓝牙移除所有服务
+//    [self.peripheralManager removeAllServices];
+    
+}
+
 // 关闭蓝牙设备
 - (void)closeBlueTooth {
+    
     //停止扫描
     [self.cbcManager stopScan];
     if (self.curPeripheral) {

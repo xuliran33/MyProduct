@@ -11,8 +11,6 @@
 #import "HomeView.h"
 #import "FirstViewController.h"
 
-
-
 @interface ViewController ()<JXCategoryListContainerViewDelegate>
 
 // tab title 数组

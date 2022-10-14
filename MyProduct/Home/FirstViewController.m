@@ -9,6 +9,7 @@
 #import "LocalNotificationManager.h"
 #import "VideoFullScreenController.h"
 #import "BLEViewController.h"
+#import "MyProduct-swift.h"
 
 
 @interface FirstViewController ()<UITableViewDelegate, UITableViewDataSource>
@@ -27,7 +28,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    self.dataSource = @[@"本地通知",@"屏幕旋转", @"蓝牙连接"];
+    self.dataSource = @[@"本地通知",@"屏幕旋转", @"蓝牙连接", @"crash收集"];
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"UITableViewCell"];
     
 }
@@ -56,21 +57,34 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    if (indexPath.row == 0) {
-        // 添加本地通知
-        [self addLocalNotification];
+    switch (indexPath.row) {
+        case 0:{
+            // 添加本地通知
+            [self addLocalNotification];
+            break;
+        }
+        case 1:{
+            // 屏幕旋转原理
+            VideoFullScreenController *vc = [[VideoFullScreenController alloc] init];
+            [self.navigationController pushViewController:vc animated:YES];
+            break;
+        }
+        case 2:{
+            // 蓝牙模块
+            BLEViewController *vc = [[BLEViewController alloc] initWithNibName:@"BLEViewController" bundle:nil];
+            [self.navigationController pushViewController:vc animated:YES];
+            break;
+        }
+        case 3:{
+            // crash收集
+            CrashViewController *vc= [[CrashViewController alloc] init];
+            [self.navigationController pushViewController:vc animated:YES];
+            break;
+        }
+            
+        default:
+            break;
     }
-    if (indexPath.row == 1) {
-        // 屏幕旋转原理
-        VideoFullScreenController *vc = [[VideoFullScreenController alloc] init];
-        [self.navigationController pushViewController:vc animated:YES];
-    }
-    
-    if(indexPath.row == 2) {
-        BLEViewController *vc = [[BLEViewController alloc] initWithNibName:@"BLEViewController" bundle:nil];
-        [self.navigationController pushViewController:vc animated:YES];
-    }
-    
 }
 
 // 添加本地通知点击事件

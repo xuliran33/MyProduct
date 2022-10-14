@@ -20,6 +20,4 @@
     BLEManager *manager = [BLEManager sharedBLEManager];
 }
 
-
-
 @end

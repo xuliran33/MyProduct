@@ -9,6 +9,7 @@
 #import <USerNotifications/USerNotifications.h>
 #import "LaunchViewController.h"
 #import "VideoFullScreenController.h"
+#import "MyProduct-swift.h"
 
 @interface AppDelegate ()<UNUserNotificationCenterDelegate, UIApplicationDelegate>
 
@@ -18,12 +19,20 @@
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    
     [self setStartRootViewController];
     [self registerLocalAPN];
     
     if (launchOptions[UIApplicationLaunchOptionsLocalNotificationKey]) {
         [self didDealLocalNotificationWithUserInfo:launchOptions[UIApplicationLaunchOptionsLocalNotificationKey]];
     }
+    
+    [CrashManager crashHandleWithCrashContentAction:^(NSArray<NSString *> * array) {
+       // 获取到的崩溃信息，在崩溃后重启程序时，可以传到后台
+        for (NSString *str in array) {
+            NSLog(@"%@", str);
+        }
+    }];
     return YES;
 }
 

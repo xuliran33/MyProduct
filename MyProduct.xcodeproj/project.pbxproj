@@ -34,6 +34,11 @@
 		F4692F1A28CAD54600FFE527 /* NetworkTools.m in Sources */ = {isa = PBXBuildFile; fileRef = F4692F1928CAD54600FFE527 /* NetworkTools.m */; };
 		F4692F2028CB1D1900FFE527 /* HomeView.m in Sources */ = {isa = PBXBuildFile; fileRef = F4692F1F28CB1D1900FFE527 /* HomeView.m */; };
 		F4692F2728CB23F000FFE527 /* LaunchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F4692F2628CB23F000FFE527 /* LaunchViewController.m */; };
+		F46FE4F328F931B50098CBE3 /* CrashManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46FE4EA28F931B40098CBE3 /* CrashManager.swift */; };
+		F46FE4F428F931B50098CBE3 /* SlideAdressTool.m in Sources */ = {isa = PBXBuildFile; fileRef = F46FE4EB28F931B40098CBE3 /* SlideAdressTool.m */; };
+		F46FE4F528F931B50098CBE3 /* crashNSExceptionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46FE4EC28F931B40098CBE3 /* crashNSExceptionManager.swift */; };
+		F46FE4F628F931B50098CBE3 /* crashSignalManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46FE4EE28F931B40098CBE3 /* crashSignalManager.swift */; };
+		F46FE4FA28F9361B0098CBE3 /* CrashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46FE4F928F9361B0098CBE3 /* CrashViewController.swift */; };
 		F4812BB328D1816A009D15A4 /* UIView+MLExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = F4812BB128D1816A009D15A4 /* UIView+MLExtension.m */; };
 		FDA803EC114F2D19D74D6DC2 /* Pods_MyProduct_MyProductUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56F67DE5C89BC6EFA8F0D5AA /* Pods_MyProduct_MyProductUITests.framework */; };
 /* End PBXBuildFile section */
@@ -110,6 +115,13 @@
 		F4692F1F28CB1D1900FFE527 /* HomeView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeView.m; sourceTree = "<group>"; };
 		F4692F2528CB23F000FFE527 /* LaunchViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LaunchViewController.h; sourceTree = "<group>"; };
 		F4692F2628CB23F000FFE527 /* LaunchViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LaunchViewController.m; sourceTree = "<group>"; };
+		F46FE4E328F931780098CBE3 /* MyProduct-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MyProduct-Bridging-Header.h"; sourceTree = "<group>"; };
+		F46FE4EA28F931B40098CBE3 /* CrashManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CrashManager.swift; sourceTree = "<group>"; };
+		F46FE4EB28F931B40098CBE3 /* SlideAdressTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SlideAdressTool.m; sourceTree = "<group>"; };
+		F46FE4EC28F931B40098CBE3 /* crashNSExceptionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = crashNSExceptionManager.swift; sourceTree = "<group>"; };
+		F46FE4ED28F931B40098CBE3 /* SlideAdressTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SlideAdressTool.h; sourceTree = "<group>"; };
+		F46FE4EE28F931B40098CBE3 /* crashSignalManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = crashSignalManager.swift; sourceTree = "<group>"; };
+		F46FE4F928F9361B0098CBE3 /* CrashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrashViewController.swift; sourceTree = "<group>"; };
 		F4812BB128D1816A009D15A4 /* UIView+MLExtension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+MLExtension.m"; sourceTree = "<group>"; };
 		F4812BB228D1816A009D15A4 /* UIView+MLExtension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+MLExtension.h"; sourceTree = "<group>"; };
 		FEE53F1028D7D6B8A6493B8F /* Pods-MyProduct-MyProductUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyProduct-MyProductUITests.debug.xcconfig"; path = "Target Support Files/Pods-MyProduct-MyProductUITests/Pods-MyProduct-MyProductUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -227,6 +239,7 @@
 		2EB3F9E828C5F9D100026ACE /* MyProduct */ = {
 			isa = PBXGroup;
 			children = (
+				F46FE4E228F92E310098CBE3 /* Crash */,
 				F439026E28F663FD0008F38D /* BLE */,
 				F4692F2128CB23AD00FFE527 /* Launch */,
 				F4692F1D28CB1D0400FFE527 /* Home */,
@@ -245,6 +258,7 @@
 				2EB3F9F728C5F9D300026ACE /* LaunchScreen.storyboard */,
 				2EB3F9FA28C5F9D300026ACE /* Info.plist */,
 				2EB3F9FB28C5F9D300026ACE /* main.m */,
+				F46FE4E328F931780098CBE3 /* MyProduct-Bridging-Header.h */,
 			);
 			path = MyProduct;
 			sourceTree = "<group>";
@@ -334,6 +348,27 @@
 			path = Launch;
 			sourceTree = "<group>";
 		};
+		F46FE4E228F92E310098CBE3 /* Crash */ = {
+			isa = PBXGroup;
+			children = (
+				F46FE4F928F9361B0098CBE3 /* CrashViewController.swift */,
+				F46FE4E928F931B40098CBE3 /* CrashManager */,
+			);
+			path = Crash;
+			sourceTree = "<group>";
+		};
+		F46FE4E928F931B40098CBE3 /* CrashManager */ = {
+			isa = PBXGroup;
+			children = (
+				F46FE4EA28F931B40098CBE3 /* CrashManager.swift */,
+				F46FE4EC28F931B40098CBE3 /* crashNSExceptionManager.swift */,
+				F46FE4EE28F931B40098CBE3 /* crashSignalManager.swift */,
+				F46FE4ED28F931B40098CBE3 /* SlideAdressTool.h */,
+				F46FE4EB28F931B40098CBE3 /* SlideAdressTool.m */,
+			);
+			path = CrashManager;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -406,6 +441,7 @@
 				TargetAttributes = {
 					2EB3F9E528C5F9D100026ACE = {
 						CreatedOnToolsVersion = 13.2.1;
+						LastSwiftMigration = 1400;
 					};
 					2EB3FA0028C5F9D300026ACE = {
 						CreatedOnToolsVersion = 13.2.1;
@@ -575,9 +611,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F46FE4FA28F9361B0098CBE3 /* CrashViewController.swift in Sources */,
 				F439027228F664160008F38D /* BLEViewController.m in Sources */,
+				F46FE4F328F931B50098CBE3 /* CrashManager.swift in Sources */,
 				2EB3F9F128C5F9D100026ACE /* ViewController.m in Sources */,
 				F4812BB328D1816A009D15A4 /* UIView+MLExtension.m in Sources */,
+				F46FE4F628F931B50098CBE3 /* crashSignalManager.swift in Sources */,
 				2E9B00D528C9C264005315AF /* NavigationView.m in Sources */,
 				2E9B00D128C9BF36005315AF /* BaseViewController.m in Sources */,
 				F4692F1A28CAD54600FFE527 /* NetworkTools.m in Sources */,
@@ -586,11 +625,13 @@
 				F4347B8828E2E23800BE1314 /* VideoFullScreenController.m in Sources */,
 				2E993F9428C835A500C09DAB /* LocalNotificationManager.m in Sources */,
 				F4347B8F28E425D400BE1314 /* FirstViewController.m in Sources */,
+				F46FE4F428F931B50098CBE3 /* SlideAdressTool.m in Sources */,
 				F439027628F664C80008F38D /* BLEManager.m in Sources */,
 				F4692F2028CB1D1900FFE527 /* HomeView.m in Sources */,
 				2EB3F9FC28C5F9D300026ACE /* main.m in Sources */,
 				2E993F9828C83EAB00C09DAB /* CommonTools.m in Sources */,
 				F4692F2728CB23F000FFE527 /* LaunchViewController.m in Sources */,
+				F46FE4F528F931B50098CBE3 /* crashNSExceptionManager.swift in Sources */,
 				F443716828E4378200D9E97A /* BaseNavigationController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -765,6 +806,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = U8T4Y7GT37;
@@ -786,6 +828,9 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.xuliran.MyProduct;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "MyProduct/MyProduct-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -796,6 +841,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = U8T4Y7GT37;
@@ -817,6 +863,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.xuliran.MyProduct;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "MyProduct/MyProduct-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -825,6 +873,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 5D84E161F0E134CB208FD4A2 /* Pods-MyProductTests.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -844,6 +893,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = B9C2B3B86A378C46C91576A5 /* Pods-MyProductTests.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -863,6 +913,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = FEE53F1028D7D6B8A6493B8F /* Pods-MyProduct-MyProductUITests.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = U8T4Y7GT37;
@@ -880,6 +931,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 213CE0E904630BDFE6D74D43 /* Pods-MyProduct-MyProductUITests.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = U8T4Y7GT37;
